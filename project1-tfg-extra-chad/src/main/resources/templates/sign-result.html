@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Resultado de Firma</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+<h1>Resultado / Firma</h1>
+
+<div th:if="${error}">
+  <p style="color:red" th:text="${error}"></p>
+</div>
+<div th:if="${message}">
+  <p style="color:green" th:text="${message}"></p>
+</div>
+
+<!-- Mostramos un botón para invocar AutoFirma únicamente si tenemos un PDF en Base64 (pdfBase64) -->
+<div th:if="${pdfBase64}">
+  <button id="firmarBtn" onclick="invokeAutoFirma()">FIRMAR</button>
+</div>
+
+<!-- Mostramos el enlace de descarga solo si ya está firmado -->
+<div th:if="${message}">
+  <p>
+    <a th:href="@{/sign/download(filename=${'documento-firmado.pdf'})}" download="documento-firmado.pdf">
+      Descargar PDF firmado
+    </a>
+  </p>
+</div>
+
+<script th:inline="javascript">
+  /* <![CDATA[ */
+  function invokeAutoFirma() {
+    /*
+     * Obtenemos valores desde la plantilla Thymeleaf
+     * pdfBase64 es el PDF a firmar en base64,
+     * fileName es el nombre del fichero
+     */
+    var pdfBase64 = /*[[${pdfBase64}]]*/ "";
+    var fileName = /*[[${fileName}]]*/ "documento-sin-firma.pdf";
+
+    // Parámetros para la URL de AutoFirma (protocolo afirma://)
+    // +-----------------------------------------------+
+    // | EJEMPLO                                     |
+    // |                                             |
+    // | afirma://sign?dat=[PDF_EN_BASE64]           |
+    // | &filename=miDocumento.pdf                   |
+    // | &operation=sign                             |
+    // | &algorithm=SHA512withRSA                    |
+    // | &format=pdf                                 |
+    // | &properties=signatureSubFilter%3DPADES      |
+    // | &callbackUrl=https://.../sign/callback      |
+    // +-----------------------------------------------+
+
+    var callbackUrl = window.location.protocol + "//" + window.location.host + "/vital-sanity/sign/callback";
+    // OJO: Ajustar si necesitas HTTPS o un dominio distinto.
+
+    // Escapamos el base64 para la URL
+    var dataParam = encodeURIComponent(pdfBase64);
+
+    // Subfiltro PAdES
+    var properties = encodeURIComponent("signatureSubFilter=PADES");
+
+    var url = "afirma://sign" +
+            "?dat=" + dataParam +
+            "&filename=" + encodeURIComponent(fileName) +
+            "&operation=sign" +
+            "&algorithm=SHA512withRSA" +
+            "&format=pdf" +
+            "&properties=" + properties +
+            "&callbackUrl=" + encodeURIComponent(callbackUrl);
+
+    console.log("Invocando AutoFirma con URL: " + url);
+
+    // Abrimos la URL, lo que lanzará la aplicación local de AutoFirma
+    window.location = url;
+  }
+  /* ]]> */
+</script>
+
+</body>
+</html>
