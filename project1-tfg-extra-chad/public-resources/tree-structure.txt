@@ -1,0 +1,90 @@
+vitalsanity/
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── docker-compose.yml
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── doc/
+│   └── mock.txt
+├── public-resources/
+│   ├── mock.txt
+│   └── doc-images/
+│       └── mock.txt
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── vitalsanity/
+    │   │       ├── Application.java
+    │   │       ├── authentication/
+    │   │       │   └── mock.txt
+    │   │       ├── config/
+    │   │       │   └── mock.txt
+    │   │       ├── controller/
+    │   │       │   ├── debug/
+    │   │       │   │   └── mock.txt
+    │   │       │   └── exception/
+    │   │       │       └── mock.txt
+    │   │       ├── dto/
+    │   │       │   └── mock.txt
+    │   │       ├── initializer/
+    │   │       │   └── mock.txt
+    │   │       ├── interceptor/
+    │   │       │   └── mock.txt
+    │   │       ├── model/
+    │   │       │   └── mock.txt
+    │   │       ├── repository/
+    │   │       │   └── mock.txt
+    │   │       ├── security/
+    │   │       │   └── mock.txt
+    │   │       └── service/
+    │   │           ├── mock.txt
+    │   │           ├── debug/
+    │   │           │   └── mock.txt
+    │   │           └── exception/
+    │   │               └── mock.txt
+    │   ├── resources/
+    │   │   ├── application-docker.properties
+    │   │   ├── application-postgres.properties
+    │   │   ├── application.properties
+    │   │   ├── sql/
+    │   │   │   ├── database-script/
+    │   │   │   │   └── mock.txt
+    │   │   │   └── debug/
+    │   │   │       └── mock.txt
+    │   │   ├── static/
+    │   │   │   ├── css/
+    │   │   │   │   ├── bootstrap/
+    │   │   │   │   │   ├── (archivos de Bootstrap CSS)
+    │   │   │   │   └── custom/
+    │   │   │   │       └── mock.txt
+    │   │   │   └── js/
+    │   │   │       ├── bootstrap/
+    │   │   │       │   ├── (archivos de Bootstrap JS)
+    │   │   │       ├── custom/
+    │   │   │       │   └── mock.txt
+    │   │   │       └── vendor/
+    │   │   │           ├── jquery.min.js
+    │   │   │           └── popper.min.js
+    │   │   └── templates/
+    │   │       ├── debug/
+    │   │       │   └── mock.txt
+    │   │       └── error/
+    │   │           └── mock.txt
+    └── test/
+        ├── java/
+        │   └── vitalsanity/
+        │       ├── controller/
+        │       │   └── mock.txt
+        │       ├── repository/
+        │       │   └── mock.txt
+        │       └── service/
+        │           └── mock.txt
+        └── resources/
+            ├── application-postgres.properties
+            ├── application.properties
+            └── sql/
+                ├── debug/
+                │   └── mock.txt
+                └── mock.txt
