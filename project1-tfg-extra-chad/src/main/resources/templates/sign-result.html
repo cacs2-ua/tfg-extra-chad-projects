@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Resultado de Firma</title>
+  <title>Resultado de Firma (Trifásica)</title>
   <meta charset="UTF-8"/>
 </head>
 <body>
-<h1>Resultado / Firma</h1>
+<h1>Resultado / Firma (Trifásica)</h1>
 
 <div th:if="${error}">
   <p style="color:red" th:text="${error}"></p>
@@ -14,16 +14,18 @@
   <p style="color:green" th:text="${message}"></p>
 </div>
 
-<!-- Mostramos un botón para invocar AutoFirma únicamente si tenemos un PDF en Base64 (pdfBase64) -->
-<div th:if="${pdfBase64}">
-  <button id="firmarBtn" onclick="invokeAutoFirma()">FIRMAR</button>
+<!-- Si tenemos 'fileId', mostramos el botón para firmar -->
+<div th:if="${fileId}">
+  <button onclick="invokeAutoFirma()">FIRMAR</button>
 </div>
 
-<!-- Mostramos el enlace de descarga solo si ya está firmado -->
-<div th:if="${message}">
+<!-- Mostramos el enlace de descarga del PDF (firmado o no),
+     se descargará siempre con la misma ID, pero si ya está firmado,
+     tendrás el PDF firmado. -->
+<div th:if="${fileId}">
   <p>
-    <a th:href="@{/sign/download(filename=${'documento-firmado.pdf'})}" download="documento-firmado.pdf">
-      Descargar PDF firmado
+    <a th:href="@{/sign/download(fileId=${fileId})}" download="documento-firmado.pdf">
+      Descargar PDF (firmado si se ha hecho)
     </a>
   </p>
 </div>
@@ -31,48 +33,43 @@
 <script th:inline="javascript">
   /* <![CDATA[ */
   function invokeAutoFirma() {
-    /*
-     * Obtenemos valores desde la plantilla Thymeleaf
-     * pdfBase64 es el PDF a firmar en base64,
-     * fileName es el nombre del fichero
-     */
-    var pdfBase64 = /*[[${pdfBase64}]]*/ "";
+
+    // fileId es la clave con la que guardamos el PDF
+    var fileId = /*[[${fileId}]]*/ "";
+
+    // Nombre "amigable" del archivo
     var fileName = /*[[${fileName}]]*/ "documento-sin-firma.pdf";
 
-    // Parámetros para la URL de AutoFirma (protocolo afirma://)
-    // +-----------------------------------------------+
-    // | EJEMPLO                                     |
-    // |                                             |
-    // | afirma://sign?dat=[PDF_EN_BASE64]           |
-    // | &filename=miDocumento.pdf                   |
-    // | &operation=sign                             |
-    // | &algorithm=SHA512withRSA                    |
-    // | &format=pdf                                 |
-    // | &properties=signatureSubFilter%3DPADES      |
-    // | &callbackUrl=https://.../sign/callback      |
-    // +-----------------------------------------------+
+    // URL base de tu app: http://localhost:8058/vital-sanity
+    var baseUrl = window.location.protocol + "//" + window.location.host + "/vital-sanity";
 
-    var callbackUrl = window.location.protocol + "//" + window.location.host + "/vital-sanity/sign/callback";
-    // OJO: Ajustar si necesitas HTTPS o un dominio distinto.
+    // URL del "StorageServlet" trifásico
+    var storageServletUrl = baseUrl + "/sign/storage";
 
-    // Escapamos el base64 para la URL
-    var dataParam = encodeURIComponent(pdfBase64);
-
-    // Subfiltro PAdES
-    var properties = encodeURIComponent("signatureSubFilter=PADES");
+    // Construimos la invocación trifásica a AutoFirma:
+    //   afirma://sign?
+    //       operation=sign
+    //       stservlet=... (a dónde se conecta AutoFirma para get/put)
+    //       id=...       (fileId para identificar el doc)
+    //       format=pdf
+    //       filename=...
+    //       algorithm=SHA512withRSA
+    //       properties=signatureSubFilter=PADES
+    //
+    // OJO: En trifásica NO se pone 'dat=...' en la URL, se obtiene con op=get
+    // y se sube con op=put.
 
     var url = "afirma://sign" +
-            "?dat=" + dataParam +
+            "?operation=sign" +
+            "&stservlet=" + encodeURIComponent(storageServletUrl) +
+            "&id=" + encodeURIComponent(fileId) +
             "&filename=" + encodeURIComponent(fileName) +
-            "&operation=sign" +
-            "&algorithm=SHA512withRSA" +
             "&format=pdf" +
-            "&properties=" + properties +
-            "&callbackUrl=" + encodeURIComponent(callbackUrl);
+            "&algorithm=SHA512withRSA" +
+            "&properties=" + encodeURIComponent("signatureSubFilter=PADES");
 
-    console.log("Invocando AutoFirma con URL: " + url);
+    console.log("Invocando AutoFirma (trifásica) con URL: " + url);
 
-    // Abrimos la URL, lo que lanzará la aplicación local de AutoFirma
     window.location = url;
   }
   /* ]]> */
