@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import vitalsanity.model.FormData;
 import vitalsanity.service.SignatureService;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.security.SecureRandom;
 import java.util.Base64;
-import java.util.UUID;
+import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -35,8 +40,8 @@ public class SignatureController {
     }
 
     /**
-     * Procesa el formulario, genera un PDF y prepara la trigásica:
-     * - Creamos un ID único
+     * Procesa el formulario, genera un PDF y prepara la trifásica:
+     * - Creamos un ID único (máximo 20 caracteres)
      * - Guardamos el PDF en documentsMap
      * - Mostramos la página de resultado con el botón "FIRMAR"
      */
@@ -45,16 +50,27 @@ public class SignatureController {
         try {
             byte[] pdfBytes = signatureService.generatePdf(formData);
 
-            // Generamos un ID único (UUID) para este documento
-            String fileId = UUID.randomUUID().toString();
+            // Generamos un ID único (máximo 20 caracteres)
+            String fileId = generateUniqueId(20);
 
             // Guardamos el PDF en memoria, sin firmar
             documentsMap.put(fileId, pdfBytes);
 
+            // Obtenemos la IP LAN de la máquina
+            String localIp = getLocalIpAddress();
+
+            // Verificamos que la IP no sea localhost o 127.0.0.1
+            if (localIp.equals("127.0.0.1") || localIp.equals("0:0:0:0:0:0:0:1")) {
+                throw new RuntimeException("No se pudo obtener una IP LAN válida. Asegúrate de que tu máquina está conectada a una red.");
+            }
+
+            // Construimos la URL del StorageServlet usando la IP LAN
+            String storageServletUrl = "http://" + localIp + ":" + getServerPort() + "/vital-sanity/sign/storage";
+
             // Pasamos a la vista
             model.addAttribute("fileId", fileId);
-            // Nombre sugerido
             model.addAttribute("fileName", "documento-sin-firma.pdf");
+            model.addAttribute("storageServletUrl", storageServletUrl);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,5 +128,58 @@ public class SignatureController {
     @ResponseBody
     public byte[] download(@RequestParam("fileId") String fileId) {
         return documentsMap.getOrDefault(fileId, null);
+    }
+
+    /**
+     * Genera un ID único alfanumérico de longitud especificada.
+     *
+     * @param length Longitud del ID a generar.
+     * @return Cadena alfanumérica única.
+     */
+    private String generateUniqueId(int length) {
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+        StringBuilder sb = new StringBuilder(length);
+        for(int i = 0; i < length; i++) {
+            sb.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Obtiene la dirección IP LAN de la máquina.
+     *
+     * @return IP LAN como String.
+     */
+    private String getLocalIpAddress() {
+        try {
+            Enumeration<NetworkInterface> nics = NetworkInterface.getNetworkInterfaces();
+            while(nics.hasMoreElements()) {
+                NetworkInterface ni = nics.nextElement();
+                if (ni.isUp() && !ni.isLoopback()) {
+                    Enumeration<InetAddress> addresses = ni.getInetAddresses();
+                    while(addresses.hasMoreElements()) {
+                        InetAddress addr = addresses.nextElement();
+                        if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
+                            return addr.getHostAddress();
+                        }
+                    }
+                }
+            }
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+        return "127.0.0.1"; // Fallback
+    }
+
+    /**
+     * Obtiene el puerto en el que está corriendo el servidor.
+     *
+     * @return Puerto como int.
+     */
+    private int getServerPort() {
+        // Por simplicidad, devuelve 8058 como en application.properties
+        // Para un manejo dinámico, podrías inyectar el puerto usando @Value
+        return 8058;
     }
 }

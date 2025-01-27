@@ -35,16 +35,13 @@
   function invokeAutoFirma() {
 
     // fileId es la clave con la que guardamos el PDF
-    var fileId = /*[[${fileId}]]*/ "";
+    var fileId = /*[[${fileId}]]*/ '';
 
     // Nombre "amigable" del archivo
-    var fileName = /*[[${fileName}]]*/ "documento-sin-firma.pdf";
+    var fileName = /*[[${fileName}]]*/ 'documento-sin-firma.pdf';
 
-    // URL base de tu app: http://localhost:8058/vital-sanity
-    var baseUrl = window.location.protocol + "//" + window.location.host + "/vital-sanity";
-
-    // URL del "StorageServlet" trifásico
-    var storageServletUrl = baseUrl + "/sign/storage";
+    // storageServletUrl es pasado desde el controlador
+    var storageServletUrl = /*[[${storageServletUrl}]]*/ 'http://localhost:8058/vital-sanity/sign/storage';
 
     // Construimos la invocación trifásica a AutoFirma:
     //   afirma://sign?
@@ -55,9 +52,6 @@
     //       filename=...
     //       algorithm=SHA512withRSA
     //       properties=signatureSubFilter=PADES
-    //
-    // OJO: En trifásica NO se pone 'dat=...' en la URL, se obtiene con op=get
-    // y se sube con op=put.
 
     var url = "afirma://sign" +
             "?operation=sign" +
