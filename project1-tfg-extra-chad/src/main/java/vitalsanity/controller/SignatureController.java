@@ -57,7 +57,7 @@ public class SignatureController {
             documentsMap.put(fileId, pdfBytes);
 
             // Obtenemos la IP LAN de la máquina
-            String localIp = getLocalIpAddress();
+            String localIp = "192.168.39.218";
 
             // Verificamos que la IP no sea localhost o 127.0.0.1
             if (localIp.equals("127.0.0.1") || localIp.equals("0:0:0:0:0:0:0:1")) {
