@@ -19,9 +19,8 @@
   <button onclick="invokeAutoFirma()">FIRMAR</button>
 </div>
 
-<!-- Mostramos el enlace de descarga del PDF (firmado o no),
-     se descargará siempre con la misma ID, pero si ya está firmado,
-     tendrás el PDF firmado. -->
+<!-- Mostramos el enlace de descarga del PDF (firmado o no).
+     Si ya está firmado, tendrás el PDF firmado. -->
 <div th:if="${fileId}">
   <p>
     <a th:href="@{/sign/download(fileId=${fileId})}" download="documento-firmado.pdf">
@@ -34,37 +33,23 @@
   /* <![CDATA[ */
   function invokeAutoFirma() {
 
-    // fileId es la clave con la que guardamos el PDF
-    var fileId = /*[[${fileId}]]*/ '';
+    var fileId         = /*[[${fileId}]]*/ '';
+    var fileName       = /*[[${fileName}]]*/ 'documento-sin-firma.pdf';
+    var storageServlet = /*[[${storageServletUrl}]]*/ '';
 
-    // Nombre "amigable" del archivo
-    var fileName = /*[[${fileName}]]*/ 'documento-sin-firma.pdf';
-
-    // storageServletUrl es pasado desde el controlador
-    var storageServletUrl = /*[[${storageServletUrl}]]*/ '';
-
-    // Construimos la invocación trifásica a AutoFirma.
-    // IMPORTANTE: Debe ser afirma://service (NO afirma://sign)
-    //   afirma://service
-    //       ?operation=sign
-    //       &stservlet=...
-    //       &id=...
-    //       &filename=...
-    //       &format=pdf
-    //       &algorithm=SHA512withRSA
-    //       &properties=signatureSubFilter=PADES
-    //
-    // Nota: "op=sign" y "operation=sign" funcionan prácticamente igual;
-    //       lo realmente crítico es usar "afirma://service" en vez de "afirma://sign".
-
-    var url = "afirma://service" +
-            "?operation=sign" +
-            "&stservlet=" + encodeURIComponent(storageServletUrl) +
-            "&id=" + encodeURIComponent(fileId) +
-            "&filename=" + encodeURIComponent(fileName) +
-            "&format=pdf" +
-            "&algorithm=SHA512withRSA" +
-            "&properties=" + encodeURIComponent("signatureSubFilter=PADES");
+    // Construimos la URL trifásica. IMPORTANTE:
+    // - format = PAdEStri (no "pdf")
+    // - signatureSubFilter = ETSI.CAdES.detached (no "PADES")
+    var url = "afirma://service"
+            + "?op=sign"
+            + "&cop=sign"
+            + "&v=1_0"
+            + "&stservlet="  + encodeURIComponent(storageServlet)
+            + "&id="         + encodeURIComponent(fileId)
+            + "&filename="   + encodeURIComponent(fileName)
+            + "&format=PAdEStri"
+            + "&algorithm=SHA512withRSA"
+            + "&properties=" + encodeURIComponent("signatureSubFilter=ETSI.CAdES.detached");
 
     console.log("Invocando AutoFirma (trifásica) con URL: " + url);
     window.location = url;
