@@ -27,7 +27,6 @@ public class SignPdfService {
             document.add(new Paragraph("Nombre: " + nombre));
             document.add(new Paragraph("Email: " + email));
             document.add(new Paragraph("Observaciones: " + observaciones));
-            document.add(new Paragraph("\n\nEste PDF se ha generado dinámicamente con iText7."));
 
             document.close();
             return baos.toByteArray();
