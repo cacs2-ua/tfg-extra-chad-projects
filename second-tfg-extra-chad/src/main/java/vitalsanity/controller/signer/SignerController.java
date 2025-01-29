@@ -20,7 +20,7 @@ public class SignerController {
 
     private final SignPdfService signPdfService;
 
-    // Repositorio en memoria para guardar PDFs firmados
+    // Repositorio en memoria para guardar PDFs (firmados o cofirmados)
     private final Map<String, byte[]> signedRepository = new ConcurrentHashMap<>();
 
     public SignerController(SignPdfService signPdfService) {
@@ -29,7 +29,7 @@ public class SignerController {
 
     @GetMapping("/form")
     public String showForm(Model model) {
-        // Simplemente retorna la vista Thymeleaf "form-signer.html"
+        // Retorna la vista Thymeleaf "form-signer.html"
         return "signer/form-signer";
     }
 
@@ -52,10 +52,6 @@ public class SignerController {
         return uuid;
     }
 
-    /**
-     * Permite descargar el PDF firmado, dada la clave devuelta al guardar.
-     * Devuelve un ResponseEntity con las cabeceras correctas para forzar la descarga.
-     */
     @GetMapping("/download/{id}")
     public ResponseEntity<byte[]> download(@PathVariable("id") String id) {
 
@@ -64,13 +60,54 @@ public class SignerController {
             throw new RuntimeException("No se encontró la firma con id=" + id);
         }
 
-        // Cabeceras HTTP para forzar la descarga y definir tipo
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
-        // Cabecera para forzar "attachment" y proponer nombre de fichero
         headers.setContentDispositionFormData("attachment", "documento-firmado.pdf");
 
-        // Devolvemos el PDF con las cabeceras
+        return new ResponseEntity<>(data, headers, HttpStatus.OK);
+    }
+
+    // =========================================================
+    // NUEVO: Descargar PDF firmado en Base64 para cofirmarlo
+    // =========================================================
+    @GetMapping("/download-base64/{id}")
+    @ResponseBody
+    public String downloadBase64(@PathVariable("id") String id) {
+        byte[] data = signedRepository.get(id);
+        if (data == null) {
+            throw new RuntimeException("No se encontró la firma con id=" + id);
+        }
+        // Devolvemos el PDF en Base64 para usarlo en la cofirma
+        return Base64.getEncoder().encodeToString(data);
+    }
+
+    // =========================================================
+    // NUEVO: Guardar el PDF cofirmado
+    // =========================================================
+    @PostMapping("/save-cosigned")
+    @ResponseBody
+    public String saveCosignedPdf(@RequestParam String cosignedPdfBase64) {
+        byte[] cosignedPdf = Base64.getDecoder().decode(cosignedPdfBase64);
+        String uuid = UUID.randomUUID().toString();
+        signedRepository.put(uuid, cosignedPdf);
+        return uuid;
+    }
+
+    // =========================================================
+    // NUEVO: Descargar el PDF cofirmado
+    // =========================================================
+    @GetMapping("/download-cosigned/{id}")
+    public ResponseEntity<byte[]> downloadCosigned(@PathVariable("id") String id) {
+
+        byte[] data = signedRepository.get(id);
+        if (data == null) {
+            throw new RuntimeException("No se encontró la cofirma con id=" + id);
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("attachment", "documento-cofirmado.pdf");
+
         return new ResponseEntity<>(data, headers, HttpStatus.OK);
     }
 }
