@@ -40,7 +40,6 @@ public class S3Service {
         PutObjectRequest putRequest = PutObjectRequest.builder()
                 .bucket(bucketName)
                 .key(fileName)
-                .acl(ObjectCannedACL.PUBLIC_READ) // Ajusta según tus necesidades
                 .build();
 
         s3Client.putObject(putRequest, RequestBody.fromBytes(file.getBytes()));
