@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Subir Archivos a AWS S3</title>
+</head>
+<body>
+<h1>Subir Archivos a AWS S3</h1>
+
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="files" multiple required>
+    <button type="submit">Subir</button>
+</form>
+
+<div th:if="${status}">
+    <p th:utext="${status}"></p>
+</div>
+
+<h2>Archivos en el Bucket</h2>
+<ul>
+    <li th:each="file : ${files}">
+        <a th:href="@{/download/{fileName}(fileName=${file.key()})}"
+           th:text="${file.key()}">Descargar</a>
+    </li>
+</ul>
+</body>
+</html>
