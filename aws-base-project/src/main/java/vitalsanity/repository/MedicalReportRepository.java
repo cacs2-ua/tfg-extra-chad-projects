@@ -10,4 +10,6 @@ public interface MedicalReportRepository extends JpaRepository<MedicalReport, Lo
 
     // Listar todos los MedicalReports de un usuario en particular
     List<MedicalReport> findByUser(User user);
+
+    boolean existsByName(String name);
 }

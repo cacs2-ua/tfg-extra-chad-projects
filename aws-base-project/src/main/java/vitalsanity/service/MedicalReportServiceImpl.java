@@ -23,4 +23,9 @@ public class MedicalReportServiceImpl implements MedicalReportService {
     public List<MedicalReport> findByUser(User user) {
         return medicalReportRepository.findByUser(user);
     }
+
+    @Override
+    public boolean existsMedicalReportByName(String name) {
+        return medicalReportRepository.existsByName(name);
+    }
 }

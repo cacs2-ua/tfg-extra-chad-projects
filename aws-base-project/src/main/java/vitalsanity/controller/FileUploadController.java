@@ -1,5 +1,6 @@
 package vitalsanity.controller;
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vitalsanity.authentication.ManagerUserSession;
 import vitalsanity.model.MedicalReport;
 import vitalsanity.model.User;
@@ -67,7 +68,7 @@ public class FileUploadController {
 
     // Manejar la subida de varios archivos
     @PostMapping("/upload")
-    public String handleFileUpload(@RequestParam("files") MultipartFile[] files, Model model) {
+    public String handleFileUpload(@RequestParam("files") MultipartFile[] files, RedirectAttributes redirectAttributes) {
         Long userId = getUsuarioLogeadoId();
         User user = userService.findById(userId);
 
@@ -88,35 +89,28 @@ public class FileUploadController {
                 mr.setSize(file.getSize());
                 mr.setUploaded_at(new Timestamp(Instant.now().toEpochMilli()));
                 mr.setUser(user);
-                medicalReportService.createMedicalReport(mr);
 
-                status.append("Archivo ").append(fileName).append(" subido exitosamente.<br>");
+                boolean existsReport = medicalReportService.existsMedicalReportByName(fileName);
+
+                if (!existsReport) {
+                    medicalReportService.createMedicalReport(mr);
+                    status.append("Archivo ").append(fileName).append(" subido exitosamente.<br>");
+                }
+
+                else  {
+                    status.append("El nombre de archivo: ").append(fileName).append(" ya existía en la base de datos. El archivo no se ha subido.<br>");
+                }
+
             } catch (IOException e) {
                 status.append("Error al subir ").append(fileName)
                         .append(": ").append(e.getMessage()).append("<br>");
             }
         }
-        model.addAttribute("status", status.toString());
-
-        // Actualizamos la lista de reports con URLs pre-firmadas
-        List<MedicalReport> updatedReports = medicalReportService.findByUser(user);
-        List<ReportDTO> dtos = updatedReports.stream().map(report -> {
-            String presignedUrl = s3Service.generatePresignedUrl(
-                    userId,
-                    report.getS3Key(),
-                    Duration.ofHours(1)
-            );
-            return new ReportDTO(
-                    report.getName(),
-                    presignedUrl,
-                    report.getFileType(),
-                    report.getSize()
-            );
-        }).collect(Collectors.toList());
-
-        model.addAttribute("reports", dtos);
-        return "upload";
+        // Añadir el mensaje de status como atributo flash
+        redirectAttributes.addFlashAttribute("status", status.toString());
+        return "redirect:/upload";
     }
+
 
     // DTO interno para mostrar info en la plantilla
     static class ReportDTO {
