@@ -1,5 +1,6 @@
 package vitalsanity.controller;
 
+import vitalsanity.authentication.ManagerUserSession;
 import vitalsanity.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,17 @@ public class FileUploadController {
     @Autowired
     private S3Service s3Service;
 
+    @Autowired
+    private ManagerUserSession managerUserSession;
+
+    private Long getUsuarioLogeadoId() {
+        return managerUserSession.usuarioLogeado();
+    }
+
     // Mostrar la página de subida
     @GetMapping("/upload")
     public String listUploadedFiles(Model model) {
+        Long userId = getUsuarioLogeadoId();
         List<S3Object> files = s3Service.listFiles();
         model.addAttribute("files", files);
         return "upload";

@@ -36,4 +36,17 @@ public class UserServiceImpl implements UserService {
                 Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"))
         );
     }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElse(null);
+    }
+
+    @Override
+    public User findByUserName(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package vitalsanity.controller;
 
 import org.springframework.security.core.AuthenticationException;
+import vitalsanity.authentication.ManagerUserSession;
 import vitalsanity.model.User;
 import vitalsanity.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +24,13 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private ManagerUserSession managerUserSession;
+
+    private Long getUsuarioLogeadoId() {
+        return managerUserSession.usuarioLogeado();
+    }
 
     // Mostrar el formulario de login personalizado
     @GetMapping("/login")
@@ -48,12 +56,16 @@ public class AuthController {
                     new UsernamePasswordAuthenticationToken(username, password);
             Authentication authentication = authenticationManager.authenticate(authRequest);
             SecurityContextHolder.getContext().setAuthentication(authentication);
+            // NUEVO: Obtener el usuario por username y guardar su id en la sesión
+            User user = userService.findByUserName(username);
+            managerUserSession.logearUsuario(user.getId());
             return "redirect:/upload";
         } catch (AuthenticationException e) {
             model.addAttribute("errorMsg", "Error en autenticación: " + e.getMessage());
             return "login";
         }
     }
+
 
     // Mostrar el formulario de registro
     @GetMapping("/register")

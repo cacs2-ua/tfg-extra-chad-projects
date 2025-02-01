@@ -20,17 +20,10 @@ public class SecurityConfig {
         http
                 // Permitimos el acceso a recursos públicos
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/login", "/register", "/css/**", "/js/**", "/h2-console/**").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/login", "/doLogin", "/register", "/css/**", "/js/**", "/h2-console/**").permitAll()
+                        .anyRequest().permitAll()
                 )
-                // Configuramos el formulario de login personalizado
-                .formLogin(form -> form
-                        .loginPage("/login")
-                        .loginProcessingUrl("/doLogin") // Endpoint personalizado para el POST de login
-                        .defaultSuccessUrl("/upload", true)
-                        .failureUrl("/login?error")
-                        .permitAll()
-                )
+
                 // Configuramos logout
                 .logout(logout -> logout
                         .logoutUrl("/logout")
