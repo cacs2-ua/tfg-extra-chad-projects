@@ -12,4 +12,6 @@ public interface MedicalReportRepository extends JpaRepository<MedicalReport, Lo
     List<MedicalReport> findByUser(User user);
 
     boolean existsByName(String name);
+
+    boolean existsByS3Key(String s3Key);
 }

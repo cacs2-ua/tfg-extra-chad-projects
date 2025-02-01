@@ -28,4 +28,9 @@ public class MedicalReportServiceImpl implements MedicalReportService {
     public boolean existsMedicalReportByName(String name) {
         return medicalReportRepository.existsByName(name);
     }
+
+    @Override
+    public boolean existsMedicalReportByS3Key(String seKey) {
+        return medicalReportRepository.existsByS3Key(seKey);
+    }
 }

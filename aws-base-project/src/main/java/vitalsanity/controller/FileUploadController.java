@@ -90,7 +90,7 @@ public class FileUploadController {
                 mr.setUploaded_at(new Timestamp(Instant.now().toEpochMilli()));
                 mr.setUser(user);
 
-                boolean existsReport = medicalReportService.existsMedicalReportByName(fileName);
+                boolean existsReport = medicalReportService.existsMedicalReportByS3Key(s3Key);
 
                 if (!existsReport) {
                     medicalReportService.createMedicalReport(mr);
@@ -98,7 +98,7 @@ public class FileUploadController {
                 }
 
                 else  {
-                    status.append("El nombre de archivo: ").append(fileName).append(" ya existía en la base de datos. El archivo no se ha subido.<br>");
+                    status.append("La s3Key del archivo que acabas de subir con nombre: ").append(fileName).append(" ya existía en la base de datos. El archivo no se ha subido.<br>");
                 }
 
             } catch (IOException e) {
