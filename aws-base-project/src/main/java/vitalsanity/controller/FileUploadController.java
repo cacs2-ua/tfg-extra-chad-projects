@@ -52,7 +52,7 @@ public class FileUploadController {
             String presignedUrl = s3Service.generatePresignedUrl(
                     userId,
                     report.getS3Key(),
-                    Duration.ofHours(1)
+                    Duration.ofMinutes(30)
             );
             return new ReportDTO(
                     report.getName(),
