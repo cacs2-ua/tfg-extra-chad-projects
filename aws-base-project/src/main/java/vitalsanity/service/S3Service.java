@@ -7,11 +7,14 @@ import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.core.ResponseBytes;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
-import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.*;
 import software.amazon.awssdk.services.s3.model.*;
+import software.amazon.awssdk.services.s3.presigner.S3Presigner;
+import software.amazon.awssdk.services.s3.presigner.model.*;
 
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 @Service
@@ -27,52 +30,56 @@ public class S3Service {
 
     @PostConstruct
     private void init() {
-        // Para DEV: las credenciales locales (AWS CLI / Variables de Entorno).
-        // Para PROD: Roles IAM (si la app se ejecuta en EC2, ECS, etc.).
         this.s3Client = S3Client.builder()
                 .region(Region.of(region))
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .build();
     }
 
-    // Subir archivo
-    public void uploadFile(String fileName, MultipartFile file) throws IOException {
+    // Subir archivo a S3 con prefijo "informes/user-{userId}/..."
+    public void uploadFile(Long userId, String fileName, MultipartFile file) throws IOException {
+        String key = "informes/user-" + userId + "/" + fileName;
         PutObjectRequest putRequest = PutObjectRequest.builder()
                 .bucket(bucketName)
-                .key(fileName)
+                .key(key)
                 .build();
 
         s3Client.putObject(putRequest, RequestBody.fromBytes(file.getBytes()));
     }
 
-    // Descargar archivo
-    public byte[] downloadFile(String fileName) {
-        GetObjectRequest getRequest = GetObjectRequest.builder()
-                .bucket(bucketName)
-                .key(fileName)
-                .build();
+    // Generar una URL pre-firmada para descargar el archivo
+    public String generatePresignedUrl(Long userId, String s3Key, Duration duration) {
+        // Creamos un S3Presigner (se autogestiona con DefaultCredentialsProvider)
+        try (S3Presigner presigner = S3Presigner.builder()
+                .region(Region.of(region))
+                .credentialsProvider(DefaultCredentialsProvider.create())
+                .build()) {
 
-        ResponseBytes<GetObjectResponse> s3Object = s3Client.getObjectAsBytes(getRequest);
-        return s3Object.asByteArray();
+            GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(s3Key)
+                    .build();
+
+            GetObjectPresignRequest presignRequest = GetObjectPresignRequest.builder()
+                    .signatureDuration(duration)
+                    .getObjectRequest(getObjectRequest)
+                    .build();
+
+            PresignedGetObjectRequest presignedGetObjectRequest =
+                    presigner.presignGetObject(presignRequest);
+
+            // Retorna la URL pre-firmada
+            return presignedGetObjectRequest.url().toString();
+        }
     }
 
-    // Listar archivos
-    public List<S3Object> listFiles() {
+    // Listar objetos de S3 (no se usa si obtenemos la info de la DB)
+    public List<S3Object> listAllFilesInBucket() {
         ListObjectsV2Request listRequest = ListObjectsV2Request.builder()
                 .bucket(bucketName)
                 .build();
 
         ListObjectsV2Response result = s3Client.listObjectsV2(listRequest);
         return result.contents();
-    }
-
-    // Eliminar archivo
-    public void deleteFile(String fileName) {
-        DeleteObjectRequest deleteRequest = DeleteObjectRequest.builder()
-                .bucket(bucketName)
-                .key(fileName)
-                .build();
-
-        s3Client.deleteObject(deleteRequest);
     }
 }

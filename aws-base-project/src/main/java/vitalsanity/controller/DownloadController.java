@@ -1,5 +1,6 @@
 package vitalsanity.controller;
 
+import org.springframework.http.HttpStatus;
 import vitalsanity.authentication.ManagerUserSession;
 import vitalsanity.model.User;
 import vitalsanity.service.S3Service;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import software.amazon.awssdk.services.s3.model.S3Object;
 import vitalsanity.service.UserService;
 
+import java.time.Duration;
 import java.util.List;
 
 @RestController
@@ -30,14 +32,15 @@ public class DownloadController {
     }
 
     @GetMapping("/download/{fileName}")
-    public ResponseEntity<byte[]> downloadFile(@PathVariable String fileName) {
+    public ResponseEntity<Void> downloadFile(@PathVariable String fileName) {
         Long userId = getUsuarioLogeadoId();
         User user = userService.findById(userId);
-
-        byte[] fileContent = s3Service.downloadFile(fileName);
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(fileContent);
+        // Construir la clave en S3: "informes/user-<id>/fileName"
+        String s3Key = "informes/user-" + user.getId() + "/" + fileName;
+        // Generar URL pre-firmado con validez de 1 hora
+        String presignedUrl = s3Service.generatePresignedUrl(userId, s3Key, Duration.ofHours(1));
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, presignedUrl)
+                .build();
     }
 }

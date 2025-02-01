@@ -28,7 +28,7 @@ public class User implements Serializable {
     @Column(name= "password", nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     Set<MedicalReport> medicalReports = new HashSet<>();
 
     // Constructores, getters y setters

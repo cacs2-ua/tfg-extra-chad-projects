@@ -22,11 +22,15 @@
     <p th:utext="${status}"></p>
 </div>
 
-<h2>Archivos en el Bucket</h2>
+<h2>Mis Informes Médicos</h2>
 <ul>
-    <li th:each="file : ${files}">
-        <a th:href="@{/download/{fileName}(fileName=${file.key()})}"
-           th:text="${file.key()}">Descargar</a>
+    <!-- Ahora iteramos la lista de ReportDTO, que incluye el presignedUrl -->
+    <li th:each="report : ${reports}">
+        <strong th:text="${report.name}"></strong>
+        &nbsp;|&nbsp;
+        <a th:href="${report.presignedUrl}" target="_blank">Descargar</a>
+        &nbsp;|&nbsp; Tipo: <span th:text="${report.fileType}"></span>
+        &nbsp;|&nbsp; Size: <span th:text="${report.size}"></span> bytes
     </li>
 </ul>
 </body>
