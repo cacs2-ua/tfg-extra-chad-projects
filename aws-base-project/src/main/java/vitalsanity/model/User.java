@@ -2,6 +2,8 @@ package vitalsanity.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -9,18 +11,23 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name="username", unique = true, nullable = false)
     private String username;
 
-    @Column(unique = true, nullable = false)
+    @Column(name="email", unique = true, nullable = false)
     private String email;
 
+    @Column(name="date_of_birth")
     private LocalDate dateOfBirth;
 
-    @Column(nullable = false)
+    @Column(name= "password", nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    Set<Informe> informes = new HashSet<>();
 
     // Constructores, getters y setters
 
@@ -72,5 +79,16 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Informe> getInformes() {
+        return informes;
+    }
+    public void addInforme(Informe informe) {
+        if (informes.contains(informe)) return;
+        informes.add(informe);
+        if (informe.getUser() != this) {
+            informe.setUser(this);
+        }
     }
 }
