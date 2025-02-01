@@ -1,13 +1,15 @@
 package vitalsanity.model;
 
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +29,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    Set<Informe> informes = new HashSet<>();
+    Set<MedicalReport> medicalReports = new HashSet<>();
 
     // Constructores, getters y setters
 
@@ -81,14 +83,14 @@ public class User {
         this.password = password;
     }
 
-    public Set<Informe> getInformes() {
-        return informes;
+    public Set<MedicalReport> getMedicalReports() {
+        return medicalReports;
     }
-    public void addInforme(Informe informe) {
-        if (informes.contains(informe)) return;
-        informes.add(informe);
-        if (informe.getUser() != this) {
-            informe.setUser(this);
+    public void addMedicalReport(MedicalReport medicalReport) {
+        if (medicalReports.contains(medicalReport)) return;
+        medicalReports.add(medicalReport);
+        if (medicalReport.getUser() != this) {
+            medicalReport.setUser(this);
         }
     }
 }

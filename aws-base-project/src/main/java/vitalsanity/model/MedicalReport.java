@@ -4,13 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
 
 @Entity
-@Table(name = "informes")
-public class Informe {
+@Table(name = "medical_reports")
+public class MedicalReport implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -46,9 +43,9 @@ public class Informe {
 
     // getters y setters
 
-    public Informe() {}
+    public MedicalReport() {}
 
-    public Informe(String name, String s3Key, String fileType, Long size, Timestamp uploaded_at) {
+    public MedicalReport(String name, String s3Key, String fileType, Long size, Timestamp uploaded_at) {
         this.name = name;
         this.s3Key = s3Key;
         this.fileType = fileType;
@@ -116,14 +113,14 @@ public class Informe {
 
         // Si ya tiene un comercio, lo desvincula de la lista de usuarios de ese comercio
         if (this.user != null) {
-            this.user.getInformes().remove(this);
+            this.user.getMedicalReports().remove(this);
         }
 
         // Asigna el nuevo comercio
         this.user = user;
 
-        if (!user.getInformes().contains(this)) {
-            user.addInforme(this);
+        if (!user.getMedicalReports().contains(this)) {
+            user.addMedicalReport(this);
         }
     }
 
