@@ -6,6 +6,13 @@
 <body>
 <h1>Subir Archivos a AWS S3</h1>
 
+<!-- Botón para cerrar sesión -->
+<form th:action="@{/logout}" method="get" style="display: inline;">
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+<br><br>
+
 <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
     <input type="file" name="files" multiple required>
     <button type="submit">Subir</button>

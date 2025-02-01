@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class AuthController {
 
@@ -63,7 +65,6 @@ public class AuthController {
     // Procesar el registro
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user, Model model) {
-        // Aquí puedes agregar validaciones adicionales (por ejemplo, que no exista el usuario)
         try {
             userService.registerUser(user);
             model.addAttribute("msg", "Registro exitoso. Por favor, inicia sesión.");
@@ -72,5 +73,16 @@ public class AuthController {
             model.addAttribute("errorMsg", "Error en registro: " + e.getMessage());
             return "register";
         }
+    }
+
+    // Cerrar sesión manualmente al hacer clic en "Cerrar sesión"
+    @GetMapping("/logout")
+    public String logoutUser(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession(false); // Obtiene la sesión sin crear una nueva
+        if (session != null) {
+            session.invalidate(); // Invalida la sesión actual
+        }
+        SecurityContextHolder.clearContext(); // Limpia el contexto de autenticación
+        return "redirect:/login?logout";
     }
 }
