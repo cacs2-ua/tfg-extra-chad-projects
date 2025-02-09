@@ -15,7 +15,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jdk-alpine
 
 # Crear un usuario y grupo no root para aumentar la seguridad
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup -h /home/appuser
 
 # Establece el directorio de trabajo
 WORKDIR /app
