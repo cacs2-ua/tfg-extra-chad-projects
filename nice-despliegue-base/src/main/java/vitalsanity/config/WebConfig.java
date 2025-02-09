@@ -23,6 +23,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/upload/**");
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/download/**");
+        registry.addInterceptor(authInterceptor)
+                .addPathPatterns("/signer/**");
     }
 }
 
