@@ -53,7 +53,7 @@ mvn spring-boot:run -D spring-boot.run.profiles=postgres
 3. Para levantar la base de datos de `PostgreSQL` para los TESTS en un contenedor de `Docker`, ejecutar el siguiente comando:
 
 ```sh
-docker run --name postgres-tpvv-test -e POSTGRES_USER=tpvv -e POSTGRES_PASSWORD=tpvv -e POSTGRES_DB=tpvv_test -p 5463:5432 -d postgres:13
+docker run --name postgres-basevital-test -e POSTGRES_USER=basevital -e POSTGRES_PASSWORD=basevital -e POSTGRES_DB=basevital_test -p 6001:5432 -d postgres:13
 ```
 
 4. Para ejecutar los tests para que se ejecuten con la base de datos de PostgreSQL, ejecutar el siguiente comando:
