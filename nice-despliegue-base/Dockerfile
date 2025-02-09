@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
 # Expose the application port
-EXPOSE 8123
+EXPOSE 8003
 
 # Set the default command to run the application
 CMD ["java", "-jar", "app.jar", "--spring.profiles.active=docker"]
