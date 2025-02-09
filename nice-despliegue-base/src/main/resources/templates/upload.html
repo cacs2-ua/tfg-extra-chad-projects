@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Subir Archivos a AWS S3</title>
+</head>
+<body>
+<h1>Subir Archivos a AWS S3</h1>
+
+<!-- Botón para cerrar sesión -->
+<form th:action="@{/logout}" method="get" style="display: inline;">
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+<br><br>
+
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="files" multiple required>
+    <button type="submit">Subir</button>
+</form>
+
+<div th:if="${status}">
+    <p th:utext="${status}"></p>
+</div>
+
+<h2>Mis Informes Médicos</h2>
+<ul>
+    <!-- Ahora iteramos la lista de ReportDTO, que incluye el presignedUrl -->
+    <li th:each="report : ${reports}">
+        <strong th:text="${report.name}"></strong>
+        &nbsp;|&nbsp;
+        <a th:href="${report.presignedUrl}" target="_blank">Descargar</a>
+        &nbsp;|&nbsp; Tipo: <span th:text="${report.fileType}"></span>
+        &nbsp;|&nbsp; Size: <span th:text="${report.size}"></span> bytes
+    </li>
+</ul>
+</body>
+</html>
