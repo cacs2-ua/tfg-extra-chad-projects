@@ -1,27 +1,36 @@
-# Use an official Maven image to build the application
+# Etapa 1: Construcción de la aplicación con Maven
 FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
-# Set the working directory inside the container
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copy the Maven project files into the container
+# Copia los archivos de Maven al contenedor
 COPY pom.xml .
 COPY src ./src
 
-# Build the Spring Boot application
+# Construye la aplicación Spring Boot (omitiendo tests para mayor velocidad)
 RUN mvn clean package -DskipTests
 
-# Use a lightweight JDK image for runtime
+# Etapa 2: Imagen final de ejecución
 FROM eclipse-temurin:21-jdk-alpine
 
-# Set the working directory inside the container
+# Crear un usuario y grupo no root para aumentar la seguridad
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copy the built application jar file from the builder stage
+# Copia el archivo jar generado en la etapa de construcción
 COPY --from=builder /app/target/*.jar app.jar
 
-# Expose the application port
+# Cambia la propiedad de los archivos a 'appuser'
+RUN chown -R appuser:appgroup /app
+
+# Expone el puerto de la aplicación
 EXPOSE 8003
 
-# Set the default command to run the application
+# Cambia al usuario no root para la ejecución
+USER appuser
+
+# Comando por defecto para ejecutar la aplicación
 CMD ["java", "-jar", "app.jar", "--spring.profiles.active=docker"]

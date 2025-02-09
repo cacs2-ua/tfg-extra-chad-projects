@@ -10,22 +10,31 @@ services:
       - db
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      # Si deseas definir la región, puedes agregarla aquí:
+      # Puedes definir la región de AWS si lo necesitas:
       # AWS_REGION: us-east-1
     volumes:
-      # Monta la carpeta de configuración de AWS de Windows en la ubicación que AWS SDK busca dentro del contenedor.
-      # En Windows puedes usar la ruta "C:/Users/Cris-SX/.aws" o "C:\Users\Cris-SX\.aws"
-      - C:/Users/Cris-SX/.aws:/root/.aws:ro
+      # Monta la carpeta de configuración de AWS de Windows en la ruta que utiliza el AWS SDK dentro del contenedor.
+      - C:/Users/Cris-SX/.aws:/home/appuser/.aws:ro
+    networks:
+      - app_network
 
   db:
     image: postgres:15
     container_name: postgres
     restart: always
-    ports:
-      - "6000:5432"
+    # Para aumentar la seguridad, se recomienda no exponer el puerto de la base de datos al host
+    # a menos que sea estrictamente necesario. Así, la DB solo es accesible desde otros contenedores.
+    # ports:
+    #   - "6000:5432"
     environment:
       POSTGRES_USER: basevital
       POSTGRES_PASSWORD: basevital
       POSTGRES_DB: basevital
     volumes:
       - ./src/main/resources/sql/database-script/seed-develop-db.sql:/docker-entrypoint-initdb.d/seed-develop-db.sql
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
