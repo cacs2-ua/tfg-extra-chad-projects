@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8123:8123"
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5462:5432"
+    environment:
+      POSTGRES_USER: tpvv
+      POSTGRES_PASSWORD: tpvv
+      POSTGRES_DB: tpvv
+    volumes:
+      - ./src/main/resources/sql/database-script/seed-develop-db.sql:/docker-entrypoint-initdb.d/seed-develop-db.sql
