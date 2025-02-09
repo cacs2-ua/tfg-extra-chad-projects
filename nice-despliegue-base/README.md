@@ -41,7 +41,7 @@ La API de tpvv-BoarDalo es una API REST que permite realizar pagos online de for
 1. Para levantar la base de datos de `PostgreSQL` en un contenedor de `Docker`, ejecutar el siguiente comando:
 
 ```sh
-docker run --name postgres-tpvv-develop -e POSTGRES_USER=tpvv -e POSTGRES_PASSWORD=tpvv -e POSTGRES_DB=tpvv -p 5462:5432 -d postgres:13
+docker run --name postgres-basevital-develop -e POSTGRES_USER=basevital -e POSTGRES_PASSWORD=basevital -e POSTGRES_DB=basevital -p 6000:5432 -d postgres:13
 ```
 
 2. Para ejecutar la aplicación para que se conecte a la base de datos de PostgreSQL, ejecutar el siguiente comando:
