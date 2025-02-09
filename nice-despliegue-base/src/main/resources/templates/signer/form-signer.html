@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Firma</title>
+    <!-- Cargamos autoscript.js (JavaScript de despliegue de @firma) -->
+    <script th:src="@{/js/autoscript.js}"></script>
+    <!-- Nuestro JS específico de la invocación a la firma -->
+    <script th:src="@{/js/signer-invoke.js}"></script>
+</head>
+<body>
+<h1>Formulario + Firma con AutoFirma</h1>
+
+<form id="formData">
+    <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="Juan Pérez" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="juan@example.com" />
+    </div>
+    <div>
+        <label for="observaciones">Observaciones:</label>
+        <textarea name="observaciones" id="observaciones">Observaciones de prueba</textarea>
+    </div>
+</form>
+
+<button type="button" onclick="onClickFirmar()">FIRMAR</button>
+
+<div id="resultadoFirma" style="margin-top:20px; color:blue;">
+    <!-- Aquí mostraremos el enlace de descarga cuando esté listo -->
+</div>
+
+<!-- NUEVO: Botón para cofirmar, inicialmente oculto -->
+<button type="button" id="btnCofirmar" onclick="onClickCofirmar()" style="display:none;">
+    COFIRMAR
+</button>
+
+<!-- NUEVO: Aquí mostraremos el enlace al PDF cofirmado -->
+<div id="resultadoCofirma" style="margin-top:20px; color:green;">
+</div>
+
+</body>
+</html>
