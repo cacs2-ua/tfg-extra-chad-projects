@@ -150,6 +150,15 @@ function uploadCosignedPdf(cosignedPdfBase64) {
 
 // Al cargar la página, inicializamos la app de @firma:
 window.addEventListener("load", () => {
+    // Si se detecta un dispositivo móvil (Android o iOS), forzamos el uso de servicios intermedios
+    // para garantizar la compatibilidad, y configuramos las URL de los servicios Storage y Retrieve.
+    if (AutoScript.isAndroid() || AutoScript.isIOS()) {
+        AutoScript.setForceWSMode(true);
+        AutoScript.setServlets(
+            "https://192.168.147.218/vital-sanity/afirma-signature-storage/StorageService",
+            "https://192.168.147.218/vital-sanity/afirma-signature-retriever/RetrieveService"
+        );
+    }
     // Cargamos la app de autofirma
     AutoScript.cargarAppAfirma();
 });
