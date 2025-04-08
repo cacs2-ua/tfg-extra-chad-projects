@@ -10,7 +10,7 @@ brindando una experiencia de pago moderna y fluida tanto para ti como para tus c
 ¡Con tpvv, llevas tus transacciones al siguiente nivel!
 
 ## 💪 Componentes del equipo
-
+ 
 ---
 
 Somos el grupo **G15** de parácticas de la asignatura de **Ingeniería Web** de la **Universidad de Alicante**. Estos son nuestros datos por si necesitáis contactar con nosotros para resolver cualquier duda o problema:
