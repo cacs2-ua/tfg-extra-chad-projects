@@ -13,6 +13,8 @@ let globalSignedId = null;
  * FIRMAR (primera firma del documento)
  */
 function onClickFirmar() {
+    showLoading();
+
     // 1) Recogemos datos del formulario
     const form = document.getElementById("formData");
     const formData = new FormData(form);
@@ -33,9 +35,13 @@ function onClickFirmar() {
                 function (signedPdfBase64, signerCert, extraInfo) {
                     // EXITO: subimos el PDF firmado al servidor
                     uploadSignedPdf(signedPdfBase64);
+
+                    hideLoading();
                 },
                 function (errorType, errorMessage) {
                     alert("ERROR en firma: " + errorType + " - " + errorMessage);
+
+                    hideLoading();
                 }
             );
         })
@@ -89,6 +95,8 @@ function onClickCofirmar() {
         return;
     }
 
+    showLoading();
+
     // 1) Descargamos en Base64 el PDF previamente firmado
     fetch("/vital-sanity/signer/download-base64/" + globalSignedId)
         .then(response => response.text())
@@ -102,9 +110,13 @@ function onClickCofirmar() {
                 function (cosignedPdfBase64, signerCert, extraInfo) {
                     // EXITO: subimos la cofirma al servidor
                     uploadCosignedPdf(cosignedPdfBase64);
+
+                    hideLoading();
                 },
                 function (errorType, errorMessage) {
                     alert("ERROR en cofirma: " + errorType + " - " + errorMessage);
+
+                    hideLoading();
                 }
             );
         })
@@ -139,6 +151,21 @@ function uploadCosignedPdf(cosignedPdfBase64) {
             alert("Error subiendo PDF cofirmado: " + err);
         });
 }
+
+/**
+ * Función para mostrar la pantalla de carga.
+ */
+function showLoading() {
+    document.getElementById("loading-overlay").style.display = "flex";
+}
+
+/**
+ * Función para ocultar la pantalla de carga.
+ */
+function hideLoading() {
+    document.getElementById("loading-overlay").style.display = "none";
+}
+
 
 /**
  * IMPORTANTE (recordatorio de los servicios Storage/Retriever):

@@ -2,6 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario de Firma</title>
+
+    <style>
+        /* Overlay que cubre la ventana completa */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        /* Spinner central (puedes personalizarlo según tu gusto) */
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px; /* Separación del mensaje */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
     <!-- Cargamos autoscript.js (JavaScript de despliegue de @firma) -->
     <script th:src="@{/js/autoscript.js}"></script>
     <!-- Nuestro JS específico de la invocación a la firma -->
@@ -38,6 +73,12 @@
 
 <!-- NUEVO: Aquí mostraremos el enlace al PDF cofirmado -->
 <div id="resultadoCofirma" style="margin-top:20px; color:green;">
+</div>
+
+<!-- Añade esto justo antes del cierre de la etiqueta </body> -->
+<div id="loading-overlay" class="overlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Procesando, por favor espere...</p>
 </div>
 
 </body>
