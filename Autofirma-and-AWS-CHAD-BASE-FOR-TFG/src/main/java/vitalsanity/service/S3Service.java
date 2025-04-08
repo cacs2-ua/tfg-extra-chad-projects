@@ -54,7 +54,7 @@ public class S3Service {
 
 
     // Generar una URL pre-firmada para descargar el archivo
-    public String generatePresignedUrl(Long userId, String s3Key, Duration duration) {
+    public String generatePresignedUrl(String s3Key, Duration duration) {
         // Creamos un S3Presigner (se autogestiona con DefaultCredentialsProvider)
         try (S3Presigner presigner = S3Presigner.builder()
                 .region(Region.of(region))

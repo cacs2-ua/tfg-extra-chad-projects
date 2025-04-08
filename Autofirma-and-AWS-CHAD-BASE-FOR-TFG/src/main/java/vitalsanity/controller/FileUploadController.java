@@ -50,7 +50,6 @@ public class FileUploadController {
         List<ReportDTO> dtos = reports.stream().map(report -> {
             // Generar la URL pre-firmada (validez 1 hora por ejemplo)
             String presignedUrl = s3Service.generatePresignedUrl(
-                    userId,
                     report.getS3Key(),
                     Duration.ofMinutes(30)
             );

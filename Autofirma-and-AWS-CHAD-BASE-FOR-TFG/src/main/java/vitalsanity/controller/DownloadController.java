@@ -38,7 +38,7 @@ public class DownloadController {
         // Construir la clave en S3: "informes/user-<id>/fileName"
         String s3Key = "informes/user-" + user.getId() + "/" + fileName;
         // Generar URL pre-firmado con validez de 1 hora
-        String presignedUrl = s3Service.generatePresignedUrl(userId, s3Key, Duration.ofHours(1));
+        String presignedUrl = s3Service.generatePresignedUrl(s3Key, Duration.ofHours(1));
         return ResponseEntity.status(HttpStatus.FOUND)
                 .header(HttpHeaders.LOCATION, presignedUrl)
                 .build();
