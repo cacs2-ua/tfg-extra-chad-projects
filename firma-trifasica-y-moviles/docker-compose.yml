@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8003"
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      # Puedes definir la región de AWS si lo necesitas, por ejemplo:
+      # AWS_REGION: us-east-1
+    volumes:
+      # Monta la carpeta de configuración de AWS de Windows en el home del usuario no root en el contenedor
+      - C:/Users/Cris-SX/.aws:/home/appuser/.aws:ro
+    networks:
+      - app_network
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "6000:5432"
+    environment:
+      POSTGRES_USER: basevital
+      POSTGRES_PASSWORD: basevital
+      POSTGRES_DB: basevital
+    volumes:
+      # Volumen para la persistencia de datos de la base de datos
+      - db_data:/var/lib/postgresql/data
+      # Volumen para ejecutar el script de inicialización (se ejecuta solo si el volumen está vacío)
+      - ./src/main/resources/sql/database-script/seed-develop-db.sql:/docker-entrypoint-initdb.d/seed-develop-db.sql
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  db_data:
