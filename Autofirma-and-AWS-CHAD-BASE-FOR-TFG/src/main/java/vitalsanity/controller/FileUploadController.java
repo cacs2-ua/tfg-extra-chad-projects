@@ -77,8 +77,10 @@ public class FileUploadController {
         for (MultipartFile file : files) {
             String fileName = file.getOriginalFilename();
             try {
+                String key = "informes/user-" + userId + "/" + fileName;
+
                 // 1) Subir a S3 con prefijo "informes/user-<userId>/..."
-                s3Service.uploadFile(userId, fileName, file);
+                s3Service.uploadFile(key, file);
 
                 // 2) Registrar en la tabla medical_reports
                 String s3Key = "informes/user-" + userId + "/" + fileName;

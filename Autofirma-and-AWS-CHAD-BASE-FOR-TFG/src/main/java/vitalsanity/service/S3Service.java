@@ -40,8 +40,7 @@ public class S3Service {
     }
 
     // Subir archivo a S3 con prefijo "informes/user-{userId}/..."
-    public void uploadFile(Long userId, String fileName, MultipartFile file) throws IOException {
-        String key = "informes/user-" + userId + "/" + fileName;
+    public void uploadFile(String key, MultipartFile file) throws IOException {
 
         // Se indica el cifrado SSE-KMS, pero sin espeit stcificar la clave (se usará la configuración predeterminada del bucket)
         PutObjectRequest putRequest = PutObjectRequest.builder()
@@ -52,6 +51,20 @@ public class S3Service {
 
         s3Client.putObject(putRequest, RequestBody.fromBytes(file.getBytes()));
     }
+
+        // Subir archivo a S3 con prefijo "informes/user-{userId}/..."
+        public void uploadTwoFile(Long userId, String fileName, MultipartFile file) throws IOException {
+                String key = "informes/user-" + userId + "/" + fileName;
+        
+                // Se indica el cifrado SSE-KMS, pero sin espeit stcificar la clave (se usará la configuración predeterminada del bucket)
+                PutObjectRequest putRequest = PutObjectRequest.builder()
+                        .bucket(bucketName)
+                        .key(key)
+                        .serverSideEncryption(ServerSideEncryption.AWS_KMS)
+                        .build();
+        
+                s3Client.putObject(putRequest, RequestBody.fromBytes(file.getBytes()));
+            }
 
 
     // Generar una URL pre-firmada para descargar el archivo
