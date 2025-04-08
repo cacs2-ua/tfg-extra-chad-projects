@@ -2,6 +2,7 @@ package vitalsanity.controller;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import vitalsanity.authentication.ManagerUserSession;
+import vitalsanity.dto.ReportDTO;
 import vitalsanity.model.MedicalReport;
 import vitalsanity.model.User;
 import vitalsanity.service.*;
@@ -112,25 +113,4 @@ public class FileUploadController {
         return "redirect:/upload";
     }
 
-
-    // DTO interno para mostrar info en la plantilla
-    static class ReportDTO {
-        private String name;
-        private String presignedUrl;
-        private String fileType;
-        private Long size;
-
-        public ReportDTO(String name, String presignedUrl, String fileType, Long size) {
-            this.name = name;
-            this.presignedUrl = presignedUrl;
-            this.fileType = fileType;
-            this.size = size;
-        }
-
-        // getters
-        public String getName() { return name; }
-        public String getPresignedUrl() { return presignedUrl; }
-        public String getFileType() { return fileType; }
-        public Long getSize() { return size; }
-    }
 }
