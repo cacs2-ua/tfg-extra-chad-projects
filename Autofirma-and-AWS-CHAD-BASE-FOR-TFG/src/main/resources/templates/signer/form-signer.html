@@ -17,18 +17,20 @@
             align-items: center;
             z-index: 9999;
             color: #fff;
-            font-size: 1.2em;
+            font-size: 1.2rem;
+            padding: 1rem; /* Opcional, para que el contenido no quede pegado a los bordes en pantallas pequeñas */
+            box-sizing: border-box;
         }
 
         /* Spinner central (puedes personalizarlo según tu gusto) */
         .spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
+            border: 0.5rem solid #f3f3f3; /* 8px => 0.5rem */
+            border-top: 0.5rem solid #3498db; /* 8px => 0.5rem */
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 3.75rem;  /* 60px => 3.75rem */
+            height: 3.75rem; /* 60px => 3.75rem */
             animation: spin 1s linear infinite;
-            margin-bottom: 20px; /* Separación del mensaje */
+            margin-bottom: 1.25rem;  /* 20px => 1.25rem */
         }
 
         @keyframes spin {
@@ -36,7 +38,35 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Estilos RESPONSIVE */
+        /* Para pantallas medianas */
+        @media (max-width: 768px) {
+            .overlay {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            .spinner {
+                width: 3rem;  /* Se reduce el tamaño del spinner */
+                height: 3rem;
+                border-width: 0.4rem;
+            }
+        }
+
+        /* Para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .overlay {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+            .spinner {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-width: 0.35rem;
+            }
+        }
     </style>
+
+
     <!-- Cargamos autoscript.js (JavaScript de despliegue de @firma) -->
     <script th:src="@{/js/vendor/autoscript.js}"></script>
     <!-- Nuestro JS específico de la invocación a la firma -->

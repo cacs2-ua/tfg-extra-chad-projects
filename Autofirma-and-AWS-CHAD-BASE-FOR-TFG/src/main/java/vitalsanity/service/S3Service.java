@@ -52,6 +52,17 @@ public class S3Service {
         s3Client.putObject(putRequest, RequestBody.fromBytes(file.getBytes()));
     }
 
+    public void subirFicheroBytes(String key, byte[] fileContent) throws IOException {
+        // Se indica el cifrado SSE-KMS, pero sin especificar la clave (se usará la configuración predeterminada del bucket)
+        PutObjectRequest putRequest = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(key)
+                .serverSideEncryption(ServerSideEncryption.AWS_KMS)
+                .build();
+
+        s3Client.putObject(putRequest, RequestBody.fromBytes(fileContent));
+    }
+
 
     // Generar una URL pre-firmada para descargar el archivo
     public String generatePresignedUrl(String s3Key, Duration duration) {
