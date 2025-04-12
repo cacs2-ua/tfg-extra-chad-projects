@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [12/Apr/2025:03:42:36 +0200] "POST /vital-sanity/afirma-signature-storage/StorageService HTTP/1.0" 200 2
+127.0.0.1 - - [12/Apr/2025:03:42:37 +0200] "POST /vital-sanity/afirma-signature-retriever/RetrieveService HTTP/1.0" 200 77323

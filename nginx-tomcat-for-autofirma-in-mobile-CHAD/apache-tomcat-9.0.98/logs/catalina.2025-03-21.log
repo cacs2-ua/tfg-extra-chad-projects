@@ -1,0 +1,402 @@
+21-Mar-2025 00:02:31.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.98
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 5 2024 19:50:29 UTC
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.98.0
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-21
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       21.0.5+9-LTS-239
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 00:02:31.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 00:02:31.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Mar-2025 00:02:31.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+21-Mar-2025 00:02:31.037 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Program Files\apache-tomcat-9.0.98\conf\logging.properties
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 00:02:31.039 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Program Files\apache-tomcat-9.0.98\temp
+21-Mar-2025 00:02:31.050 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+21-Mar-2025 00:02:31.050 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+21-Mar-2025 00:02:31.050 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+21-Mar-2025 00:02:31.069 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+21-Mar-2025 00:02:31.548 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["https-openssl-nio-8080"]
+
+21-Mar-2025 00:02:31.945 INFO [main] org.apache.tomcat.util.net.AbstractEndpoint.logCertificate Connector [https-openssl-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Cris-SX\Desktop\UA\TFG\CERTIFICADOS\server.keystore] using alias [tomcat] with trust store [null]
+21-Mar-2025 00:02:31.961 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1258] milliseconds
+21-Mar-2025 00:02:32.044 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+21-Mar-2025 00:02:32.044 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.98]
+21-Mar-2025 00:02:32.068 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-retriever.war] de la aplicación web
+21-Mar-2025 00:02:32.473 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-retriever.war] has finished in [400] ms
+21-Mar-2025 00:02:32.475 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-storage.war] de la aplicación web
+21-Mar-2025 00:02:32.559 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-storage.war] has finished in [82] ms
+21-Mar-2025 00:02:32.559 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-retriever] de la aplicación web
+21-Mar-2025 00:02:32.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-retriever] has finished in [73] ms
+21-Mar-2025 00:02:32.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-storage] de la aplicación web
+21-Mar-2025 00:02:32.703 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-storage] has finished in [71] ms
+21-Mar-2025 00:02:32.703 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\docs] de la aplicación web
+21-Mar-2025 00:02:32.747 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\docs] has finished in [44] ms
+21-Mar-2025 00:02:32.750 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\examples] de la aplicación web
+21-Mar-2025 00:02:33.402 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\examples] has finished in [652] ms
+21-Mar-2025 00:02:33.402 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\host-manager] de la aplicación web
+21-Mar-2025 00:02:33.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\host-manager] has finished in [54] ms
+21-Mar-2025 00:02:33.458 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\manager] de la aplicación web
+21-Mar-2025 00:02:33.511 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\manager] has finished in [53] ms
+21-Mar-2025 00:02:33.511 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\ROOT] de la aplicación web
+21-Mar-2025 00:02:33.545 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\ROOT] has finished in [34] ms
+21-Mar-2025 00:02:33.551 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["https-openssl-nio-8080"]
+21-Mar-2025 00:02:33.578 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1616] milliseconds
+21-Mar-2025 00:05:38.961 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:05:38.964 WARNING [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:11:09.745 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:09.746 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:11:13.014 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:13.015 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:11:34.708 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:34.735 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: nmVNGNi1aCzQccdrhK7C
+21-Mar-2025 00:11:34.748 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 00:11:34.751 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 00:11:34.754 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\nmVNGNi1aCzQccdrhK7C
+21-Mar-2025 00:11:34.755 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:11:37.677 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:37.678 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:11:46.037 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:46.132 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: QeZOwnCUu8l77ifHV3gD
+21-Mar-2025 00:11:46.137 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\QeZOwnCUu8l77ifHV3gD
+21-Mar-2025 00:11:46.137 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:11:48.315 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:11:48.317 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:12:39.228 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:12:39.228 WARNING [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:13:04.181 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:13:04.204 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: sJJ6iFXz9JupBQVFo2Tg
+21-Mar-2025 00:13:04.207 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\sJJ6iFXz9JupBQVFo2Tg
+21-Mar-2025 00:13:04.208 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:13:06.589 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:13:06.590 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:13:14.346 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:13:14.382 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: dr2tlrd2I9BtLH7oFf2H
+21-Mar-2025 00:13:14.385 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\dr2tlrd2I9BtLH7oFf2H
+21-Mar-2025 00:13:14.386 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:13:16.497 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:13:16.498 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:15:40.073 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:15:40.073 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:15:43.208 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:15:43.208 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:16:10.242 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:16:10.243 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:16:43.790 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:16:43.804 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 1JRlYh7lXKpSXKROB6aL
+21-Mar-2025 00:16:43.806 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\1JRlYh7lXKpSXKROB6aL
+21-Mar-2025 00:16:43.810 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:16:46.194 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:16:46.195 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:16:55.338 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:16:55.357 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: pX8C5e9ho7m3bS1ExJbm
+21-Mar-2025 00:16:55.360 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\pX8C5e9ho7m3bS1ExJbm
+21-Mar-2025 00:16:55.360 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:16:57.674 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:16:57.677 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:17:08.365 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:17:08.366 WARNING [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:17:29.075 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:17:29.075 WARNING [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:17:29.374 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:17:29.387 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:18:07.859 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:18:07.864 WARNING [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación
+21-Mar-2025 00:18:27.504 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:18:27.505 WARNING [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:18:30.639 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:18:30.639 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación
+21-Mar-2025 00:18:58.135 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:18:58.136 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: jQDd5OfKBZC2roOZPepr
+21-Mar-2025 00:18:58.137 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\jQDd5OfKBZC2roOZPepr
+21-Mar-2025 00:18:58.137 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:00.441 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:00.498 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: XfPgJxn0YssMcw1xK1Nz
+21-Mar-2025 00:19:00.501 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\XfPgJxn0YssMcw1xK1Nz
+21-Mar-2025 00:19:00.502 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:01.789 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:01.791 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: jQDd5OfKBZC2roOZPepr
+21-Mar-2025 00:19:01.795 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 00:19:01.799 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 00:19:01.800 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: jQDd5OfKBZC2roOZPepr
+21-Mar-2025 00:19:01.802 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:05.137 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:05.139 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: XfPgJxn0YssMcw1xK1Nz
+21-Mar-2025 00:19:05.143 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: XfPgJxn0YssMcw1xK1Nz
+21-Mar-2025 00:19:05.152 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:06.971 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:07.002 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: Oj08wpynTYKkNlgHOjXf
+21-Mar-2025 00:19:07.006 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\Oj08wpynTYKkNlgHOjXf
+21-Mar-2025 00:19:07.006 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:07.195 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:07.196 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: Oj08wpynTYKkNlgHOjXf
+21-Mar-2025 00:19:07.205 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: Oj08wpynTYKkNlgHOjXf
+21-Mar-2025 00:19:07.210 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:08.045 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:08.046 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: ItCoZ8EBRC5U1X21XZnX
+21-Mar-2025 00:19:08.048 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\ItCoZ8EBRC5U1X21XZnX
+21-Mar-2025 00:19:08.049 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:11.279 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:11.279 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ItCoZ8EBRC5U1X21XZnX
+21-Mar-2025 00:19:11.280 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: ItCoZ8EBRC5U1X21XZnX
+21-Mar-2025 00:19:11.283 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:15.464 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:15.520 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 8Cnl8ZbtZYMRdkVT9LgQ
+21-Mar-2025 00:19:15.523 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\8Cnl8ZbtZYMRdkVT9LgQ
+21-Mar-2025 00:19:15.523 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:15.690 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:15.691 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: 8Cnl8ZbtZYMRdkVT9LgQ
+21-Mar-2025 00:19:15.698 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: 8Cnl8ZbtZYMRdkVT9LgQ
+21-Mar-2025 00:19:15.704 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:17.757 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:17.812 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: xuySrmQOmJE4KifT8NNU
+21-Mar-2025 00:19:17.815 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\xuySrmQOmJE4KifT8NNU
+21-Mar-2025 00:19:17.815 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:19.545 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:19.545 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: xuySrmQOmJE4KifT8NNU
+21-Mar-2025 00:19:19.548 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: xuySrmQOmJE4KifT8NNU
+21-Mar-2025 00:19:19.570 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:24.198 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:24.225 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: BCO97OLLkgdLO0GRCXW9
+21-Mar-2025 00:19:24.230 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\BCO97OLLkgdLO0GRCXW9
+21-Mar-2025 00:19:24.232 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:26.947 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:26.959 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: BCO97OLLkgdLO0GRCXW9
+21-Mar-2025 00:19:27.015 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: BCO97OLLkgdLO0GRCXW9
+21-Mar-2025 00:19:27.021 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:28.783 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:28.812 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: b96VyishTWZAin6Feyhz
+21-Mar-2025 00:19:28.814 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\b96VyishTWZAin6Feyhz
+21-Mar-2025 00:19:28.814 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:28.902 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:28.902 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: b96VyishTWZAin6Feyhz
+21-Mar-2025 00:19:28.912 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: b96VyishTWZAin6Feyhz
+21-Mar-2025 00:19:28.918 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:19:30.245 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:19:30.291 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 3KyCKewOjYXu5FnuGkDr
+21-Mar-2025 00:19:30.296 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\3KyCKewOjYXu5FnuGkDr
+21-Mar-2025 00:19:30.296 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:19:32.832 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:19:32.832 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: 3KyCKewOjYXu5FnuGkDr
+21-Mar-2025 00:19:32.847 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: 3KyCKewOjYXu5FnuGkDr
+21-Mar-2025 00:19:32.848 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:26:57.947 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:26:57.949 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:28:17.926 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:28:17.926 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 00:29:10.301 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:29:10.305 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 8bo5c6mrdTGrNfHHHKHs
+21-Mar-2025 00:29:10.308 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 00:29:10.310 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 00:29:10.312 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\8bo5c6mrdTGrNfHHHKHs
+21-Mar-2025 00:29:10.314 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:29:12.884 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:29:12.886 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: 8bo5c6mrdTGrNfHHHKHs
+21-Mar-2025 00:29:12.896 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 00:29:12.901 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 00:29:12.905 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: 8bo5c6mrdTGrNfHHHKHs
+21-Mar-2025 00:29:12.908 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:29:14.659 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:29:14.661 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 2G0Gz7alYBTQznsHApGU
+21-Mar-2025 00:29:14.663 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\2G0Gz7alYBTQznsHApGU
+21-Mar-2025 00:29:14.663 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:29:14.921 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:29:14.922 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: 2G0Gz7alYBTQznsHApGU
+21-Mar-2025 00:29:14.927 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: 2G0Gz7alYBTQznsHApGU
+21-Mar-2025 00:29:14.930 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:29:16.453 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:29:16.457 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: 6B4VVAq49qwHQj9r7POU
+21-Mar-2025 00:29:16.459 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\6B4VVAq49qwHQj9r7POU
+21-Mar-2025 00:29:16.460 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 00:29:18.711 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:29:18.711 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: 6B4VVAq49qwHQj9r7POU
+21-Mar-2025 00:29:18.716 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: 6B4VVAq49qwHQj9r7POU
+21-Mar-2025 00:29:18.717 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:10.122 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:10.123 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:10.125 WARNING [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:10.129 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:14.268 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:14.268 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:14.269 WARNING [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:14.270 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:18.359 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:18.360 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:18.360 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:18.361 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:22.485 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:22.486 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:22.487 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:22.492 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:26.651 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:26.652 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:26.652 WARNING [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:26.653 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:30.749 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:30.750 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:30.752 WARNING [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:30.761 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:34.843 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:34.843 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:34.844 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:34.845 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:38.941 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:38.942 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:38.942 WARNING [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:38.943 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:43.036 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:43.038 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:43.038 WARNING [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:43.038 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:47.121 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:47.123 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:47.123 WARNING [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:47.124 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:51.224 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:51.225 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:51.225 WARNING [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:51.225 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:55.338 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:55.338 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:55.339 WARNING [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:55.340 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:31:59.416 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:31:59.417 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:59.418 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:31:59.418 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:32:03.724 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:32:03.725 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:03.726 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:03.732 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:32:07.799 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:32:07.799 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:07.799 WARNING [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:07.799 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:32:11.839 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 00:32:11.839 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:11.839 WARNING [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign El fichero con el identificador 'ITeskZNR7QsWI4g2b5OI' no existe: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:11.844 INFO [https-openssl-nio-8080-exec-8] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 00:32:14.175 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 00:32:14.175 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:14.176 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\ITeskZNR7QsWI4g2b5OI
+21-Mar-2025 00:32:14.176 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 01:31:25.558 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-server-triphase-signer.war] de la aplicación web
+21-Mar-2025 01:31:28.312 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+21-Mar-2025 01:31:28.328 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-server-triphase-signer.war] has finished in [2.768] ms
+21-Mar-2025 01:31:38.344 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto [/afirma-server-triphase-signer]
+21-Mar-2025 01:31:38.620 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-server-triphase-signer.war] de la aplicación web
+21-Mar-2025 01:31:40.708 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+21-Mar-2025 01:31:40.715 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-server-triphase-signer.war] has finished in [2.095] ms
+21-Mar-2025 01:32:22.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/9.0.98
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Dec 5 2024 19:50:29 UTC
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     9.0.98.0
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Program Files\Java\jdk-21
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       21.0.5+9-LTS-239
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Oracle Corporation
+21-Mar-2025 01:32:22.056 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 01:32:22.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 01:32:22.106 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+21-Mar-2025 01:32:22.106 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+21-Mar-2025 01:32:22.108 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+21-Mar-2025 01:32:22.108 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+21-Mar-2025 01:32:22.108 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+21-Mar-2025 01:32:22.110 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Program Files\apache-tomcat-9.0.98\conf\logging.properties
+21-Mar-2025 01:32:22.110 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+21-Mar-2025 01:32:22.110 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+21-Mar-2025 01:32:22.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+21-Mar-2025 01:32:22.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dignore.endorsed.dirs=
+21-Mar-2025 01:32:22.112 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 01:32:22.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Program Files\apache-tomcat-9.0.98
+21-Mar-2025 01:32:22.114 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Program Files\apache-tomcat-9.0.98\temp
+21-Mar-2025 01:32:22.120 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Cargada la biblioteca nativa APR de Apache Tomcat [1.3.1] con la versión APR [1.7.4].
+21-Mar-2025 01:32:22.122 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true], UDS [true].
+21-Mar-2025 01:32:22.122 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+21-Mar-2025 01:32:22.137 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL inicializado correctamente [OpenSSL 3.0.14 4 Jun 2024]
+21-Mar-2025 01:32:22.733 INFO [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["https-openssl-nio-8080"]
+
+21-Mar-2025 01:32:23.235 INFO [main] org.apache.tomcat.util.net.AbstractEndpoint.logCertificate Connector [https-openssl-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Cris-SX\Desktop\UA\TFG\CERTIFICADOS\server.keystore] using alias [tomcat] with trust store [null]
+21-Mar-2025 01:32:23.251 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1615] milliseconds
+21-Mar-2025 01:32:23.384 INFO [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+21-Mar-2025 01:32:23.384 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.98]
+21-Mar-2025 01:32:23.402 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-server-triphase-signer.war] de la aplicación web
+21-Mar-2025 01:32:25.482 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+21-Mar-2025 01:32:25.583 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-server-triphase-signer.war] has finished in [2.177] ms
+21-Mar-2025 01:32:25.617 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-retriever.war] de la aplicación web
+21-Mar-2025 01:32:25.688 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-retriever.war] has finished in [71] ms
+21-Mar-2025 01:32:25.688 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-storage.war] de la aplicación web
+21-Mar-2025 01:32:25.753 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Program Files\apache-tomcat-9.0.98\webapps\vital-sanity#afirma-signature-storage.war] has finished in [65] ms
+21-Mar-2025 01:32:25.753 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-retriever] de la aplicación web
+21-Mar-2025 01:32:25.813 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-retriever] has finished in [60] ms
+21-Mar-2025 01:32:25.813 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-storage] de la aplicación web
+21-Mar-2025 01:32:25.874 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\afirma-signature-storage] has finished in [61] ms
+21-Mar-2025 01:32:25.875 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\docs] de la aplicación web
+21-Mar-2025 01:32:25.917 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\docs] has finished in [42] ms
+21-Mar-2025 01:32:25.917 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\examples] de la aplicación web
+21-Mar-2025 01:32:26.607 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\examples] has finished in [690] ms
+21-Mar-2025 01:32:26.608 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\host-manager] de la aplicación web
+21-Mar-2025 01:32:26.663 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\host-manager] has finished in [55] ms
+21-Mar-2025 01:32:26.664 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\manager] de la aplicación web
+21-Mar-2025 01:32:26.707 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\manager] has finished in [41] ms
+21-Mar-2025 01:32:26.707 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Program Files\apache-tomcat-9.0.98\webapps\ROOT] de la aplicación web
+21-Mar-2025 01:32:26.725 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Program Files\apache-tomcat-9.0.98\webapps\ROOT] has finished in [18] ms
+21-Mar-2025 01:32:26.744 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["https-openssl-nio-8080"]
+21-Mar-2025 01:32:26.768 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3509] milliseconds
+21-Mar-2025 01:33:41.787 INFO [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 01:33:41.795 WARNING [https-openssl-nio-8080-exec-5] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 01:33:42.960 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 01:33:42.960 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 01:34:37.078 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 01:34:37.078 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 01:34:52.802 INFO [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 01:34:52.802 WARNING [https-openssl-nio-8080-exec-3] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 01:46:25.586 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 01:46:25.587 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 02:11:27.727 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 02:11:27.730 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: wU8rHVS20KzzJEnFJJNy
+21-Mar-2025 02:11:27.735 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 02:11:27.768 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 02:11:27.771 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\wU8rHVS20KzzJEnFJJNy
+21-Mar-2025 02:11:27.772 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+21-Mar-2025 02:11:30.186 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 02:11:30.188 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: wU8rHVS20KzzJEnFJJNy
+21-Mar-2025 02:11:30.192 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> Se carga el fichero de configuracion del classpath
+21-Mar-2025 02:11:30.194 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveConfig.<clinit> No se ha indicado un direcctorio temporal, se usara el por defecto del sistema
+21-Mar-2025 02:11:30.196 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: wU8rHVS20KzzJEnFJJNy
+21-Mar-2025 02:11:30.197 INFO [https-openssl-nio-8080-exec-4] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
+21-Mar-2025 16:28:38.751 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 16:28:38.767 WARNING [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación
+21-Mar-2025 16:28:39.384 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 16:28:39.392 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación
+21-Mar-2025 16:28:39.481 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:39.481 WARNING [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:39.941 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:39.941 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:41.888 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:41.888 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:42.476 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:42.477 WARNING [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:42.972 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:42.973 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:43.438 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:43.438 WARNING [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:43.908 INFO [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:43.908 WARNING [https-openssl-nio-8080-exec-1] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:44.369 INFO [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 16:28:44.369 WARNING [https-openssl-nio-8080-exec-7] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación
+21-Mar-2025 16:28:44.886 INFO [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+21-Mar-2025 16:28:44.886 WARNING [https-openssl-nio-8080-exec-10] es.gob.afirma.signfolder.server.proxy.StorageService.service No se ha indicado codigo de operacion
+21-Mar-2025 16:28:45.405 INFO [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+21-Mar-2025 16:28:45.407 WARNING [https-openssl-nio-8080-exec-6] es.gob.afirma.signfolder.server.proxy.RetrieveService.service ERR-00:=No se ha indicado código de operación

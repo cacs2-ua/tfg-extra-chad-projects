@@ -1,0 +1,8 @@
+12-Apr-2025 03:42:36.372 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == INICIO GUARDADO
+12-Apr-2025 03:42:36.382 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se solicita guardar un fichero con el identificador: ddlqze4p18FjTHmDxS1x
+12-Apr-2025 03:42:36.390 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.storeSign Se guardo correctamente el fichero: C:\Program Files\apache-tomcat-9.0.98\temp\ddlqze4p18FjTHmDxS1x
+12-Apr-2025 03:42:36.392 INFO [https-openssl-nio-8080-exec-9] es.gob.afirma.signfolder.server.proxy.StorageService.service  == FIN GUARDADO
+12-Apr-2025 03:42:37.260 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == INICIO RECUPERACION
+12-Apr-2025 03:42:37.261 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se solicita el fichero con el identificador: ddlqze4p18FjTHmDxS1x
+12-Apr-2025 03:42:37.266 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.retrieveSign Se recupera el fichero: ddlqze4p18FjTHmDxS1x
+12-Apr-2025 03:42:37.268 INFO [https-openssl-nio-8080-exec-2] es.gob.afirma.signfolder.server.proxy.RetrieveService.service  == FIN RECUPERACION
